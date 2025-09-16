@@ -12,9 +12,9 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   };
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbzAMfmtPIQZMYDrvIMv_bmu5vMThg0VGUwPEPcAS-konsdKK8aJRnsO2HnnXZbXmgMtxw/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbwIVpX4jcNIUYuEUiYIDqlxRKMVxCKrh_WfabcxHhCwBz9g27iCL8z1EmaGNBL9ODnyzg/exec", {
       method: "POST",
-      mode: "no-cors", // 👈 importante para que no bloquee
+      mode: "no-cors", // 👈 importante para evitar bloqueos CORS
       headers: {
         "Content-Type": "application/json",
       },
