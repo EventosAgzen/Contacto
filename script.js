@@ -1,25 +1,29 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbwnkZ_IE8UmcnR-nN6GzAqJpNNIJCRz64ESCDzHyIlaSqG8dycFLaK_aG8shImxIMr_-Q/exec";
-const form = document.querySelector("form");
-const statusMessage = document.createElement("div"); 
-statusMessage.classList.add("status-message");
-form.appendChild(statusMessage);
-
-form.addEventListener("submit", (e) => {
+document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      if (response.ok) {
-        statusMessage.textContent = "✅ Tu mensaje fue enviado con éxito.";
-        statusMessage.className = "status-message success show";
-        form.reset();
-      } else {
-        throw new Error("Error en la respuesta");
-      }
-    })
-    .catch((error) => {
-      statusMessage.textContent = "❌ Hubo un problema al enviar. Inténtalo de nuevo.";
-      statusMessage.className = "status-message error show";
-      console.error("Error!", error.message);
+  const form = e.target;
+  const data = {
+    nombre: form.nombre.value,
+    email: form.email.value,
+    telefono: form.telefono.value,
+    tipo_evento: form.tipo_evento.value,
+    invitados: form.invitados.value,
+    mensaje: form.mensaje.value,
+  };
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwnkZ_IE8UmcnR-nN6GzAqJpNNIJCRz64ESCDzHyIlaSqG8dycFLaK_aG8shImxIMr_-Q/exec", {
+      method: "POST",
+      mode: "no-cors", // 👈 importante para que no bloquee
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
+
+    alert("✅ Mensaje enviado correctamente");
+    form.reset();
+  } catch (err) {
+    alert("❌ Ocurrió un error: " + err.message);
+  }
 });
