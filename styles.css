@@ -163,19 +163,29 @@ button:hover {
   }
 }
 
-/* === HORARIO DE ATENCIÓN === */
+/* === MAPA + HORARIO con fondo === */
+.mapa,
 .horario {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 2px solid #eee;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--accent); /* mismo color del título */
+  color: white; /* texto blanco encima */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* sombra elegante */
+}
+
+.mapa h2,
+.horario h2 {
+  color: white; /* títulos en blanco para contraste */
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 .horario h2 {
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin-bottom: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -184,8 +194,10 @@ button:hover {
   font-size: 1.2rem;
 }
 
+.mapa p,
 .horario p {
-  color: var(--text-light);
   font-size: 1rem;
+  color: #fff;
+  text-align: center;
   margin: 5px 0;
 }
