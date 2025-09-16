@@ -162,3 +162,34 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* === MENSAJE DE ESTADO CON ANIMACIÓN === */
+.status-message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: none; /* Oculto por defecto */
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.status-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.status-message.success {
+  background-color: #e6f9f0;
+  color: #0f9d58;
+  border: 1px solid #0f9d58;
+}
+
+.status-message.error {
+  background-color: #fdecea;
+  color: #d93025;
+  border: 1px solid #d93025;
+}
