@@ -9,11 +9,9 @@
   <body>
     <header>
       <h1>Contacto</h1>
-      <nav>
-        <ul class="menu">
-          <li><a href="index.html">Contacto</a></li>
-        </ul>
-      </nav>
+      <p class="subtitulo">
+        ✨ AGZEN: Tu espacio ideal para fiestas y eventos en Los Olivos
+      </p>
     </header>
 
     <main class="contacto">
@@ -42,39 +40,38 @@
         </div>
       </section>
 
-<!-- FORMULARIO -->
-<section class="formulario-contacto">
-  <h2>Envíanos un mensaje</h2>
-  <form action="#" method="post">
-    
-    <label for="nombre">Nombre y Apellido:</label>
-    <input type="text" id="nombre" name="nombre" required />
+      <!-- FORMULARIO -->
+      <section class="formulario-contacto">
+        <h2>Envíanos un mensaje</h2>
+        <form action="#" method="post">
+          <label for="nombre">Nombre y Apellido:</label>
+          <input type="text" id="nombre" name="nombre" required />
 
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required />
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
 
-    <label for="telefono">Número de contacto:</label>
-    <input type="tel" id="telefono" name="telefono" required />
+          <label for="telefono">Número de contacto:</label>
+          <input type="tel" id="telefono" name="telefono" required />
 
-    <label for="tipo_evento">Tipo de evento:</label>
-    <select id="tipo_evento" name="tipo_evento" required>
-      <option value="">Selecciona una opción</option>
-      <option value="boda">Boda</option>
-      <option value="cumpleaños">Cumpleaños</option>
-      <option value="corporativo">Evento corporativo</option>
-      <option value="fiesta">Fiesta</option>
-      <option value="otro">Otro</option>
-    </select>
+          <label for="tipo_evento">Tipo de evento:</label>
+          <select id="tipo_evento" name="tipo_evento" required>
+            <option value="">Selecciona una opción</option>
+            <option value="boda">Boda</option>
+            <option value="cumpleaños">Cumpleaños</option>
+            <option value="corporativo">Evento corporativo</option>
+            <option value="fiesta">Fiesta</option>
+            <option value="otro">Otro</option>
+          </select>
 
-    <label for="invitados">Cantidad de invitados:</label>
-    <input type="number" id="invitados" name="invitados" min="1" required />
+          <label for="invitados">Cantidad de invitados:</label>
+          <input type="number" id="invitados" name="invitados" min="1" required />
 
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>
