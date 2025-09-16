@@ -162,3 +162,30 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* === HORARIO DE ATENCIÓN === */
+.horario {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.horario h2 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horario h2::before {
+  content: "⏰";
+  font-size: 1.2rem;
+}
+
+.horario p {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin: 5px 0;
+}
