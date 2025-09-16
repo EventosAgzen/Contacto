@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbyZVexZ_nMUtQVhDiUepuPd14pJz2NibasyaldNNkIwGl5DKgkwpH8hNEjy4E8-ap9R6A/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwnkZ_IE8UmcnR-nN6GzAqJpNNIJCRz64ESCDzHyIlaSqG8dycFLaK_aG8shImxIMr_-Q/exec";
 const form = document.querySelector("form");
 const statusMessage = document.createElement("div"); 
 statusMessage.classList.add("status-message");
