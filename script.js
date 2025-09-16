@@ -1,28 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactoForm");
+const scriptURL = "https://script.google.com/macros/s/AKfycbyZVexZ_nMUtQVhDiUepuPd14pJz2NibasyaldNNkIwGl5DKgkwpH8hNEjy4E8-ap9R6A/exec";
+const form = document.querySelector("form");
+const statusMessage = document.createElement("div"); 
+statusMessage.classList.add("status-message");
+form.appendChild(statusMessage);
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    const data = {
-      nombre: document.getElementById("nombre").value,
-      email: document.getElementById("email").value,
-      telefono: document.getElementById("telefono").value,
-      tipo_evento: document.getElementById("tipo_evento").value,
-      invitados: document.getElementById("invitados").value,
-      mensaje: document.getElementById("mensaje").value
-    };
-
-    fetch("https://script.google.com/macros/s/AKfycbyZVexZ_nMUtQVhDiUepuPd14pJz2NibasyaldNNkIwGl5DKgkwpH8hNEjy4E8-ap9R6A/exec", {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
-      .then(res => {
-        alert("✅ Tu mensaje fue enviado correctamente.");
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      if (response.ok) {
+        statusMessage.textContent = "✅ Tu mensaje fue enviado con éxito.";
+        statusMessage.className = "status-message success show";
         form.reset();
-      })
-      .catch(err => {
-        alert("❌ Ocurrió un error: " + err);
-      });
-  });
+      } else {
+        throw new Error("Error en la respuesta");
+      }
+    })
+    .catch((error) => {
+      statusMessage.textContent = "❌ Hubo un problema al enviar. Inténtalo de nuevo.";
+      statusMessage.className = "status-message error show";
+      console.error("Error!", error.message);
+    });
 });
