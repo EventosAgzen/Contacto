@@ -12,7 +12,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   };
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbwnkZ_IE8UmcnR-nN6GzAqJpNNIJCRz64ESCDzHyIlaSqG8dycFLaK_aG8shImxIMr_-Q/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbzAMfmtPIQZMYDrvIMv_bmu5vMThg0VGUwPEPcAS-konsdKK8aJRnsO2HnnXZbXmgMtxw/exec", {
       method: "POST",
       mode: "no-cors", // 👈 importante para que no bloquee
       headers: {
